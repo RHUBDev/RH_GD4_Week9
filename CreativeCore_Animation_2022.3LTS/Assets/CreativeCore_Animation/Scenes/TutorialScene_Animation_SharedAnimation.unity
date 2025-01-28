@@ -973,9 +973,9 @@ Animator:
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 2f02bc7cbdf26f94880527e453921dcb, type: 3}
   m_Controller: {fileID: 9100000, guid: c9754cf59c5d0b84e936d2370a15497a, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -1001,6 +1001,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a5eaf6f3742c67f439c064c9ec53398e, type: 3}
   m_PrefabInstance: {fileID: 1142264555}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &624354330 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7134646884911343052, guid: 23812f125f556b04c99f197e4523c861, type: 3}
+  m_PrefabInstance: {fileID: 7171693861481569719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &624354331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624354330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b61a49602ad028e46995c95fe3bcd04b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &658129961
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4734,19 +4751,26 @@ PrefabInstance:
     - target: {fileID: 2931130176956540161, guid: 23812f125f556b04c99f197e4523c861, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 99cb34f0390dbd04e9f1b501cee24619, type: 2}
+      objectReference: {fileID: 9100000, guid: c9754cf59c5d0b84e936d2370a15497a, type: 2}
+    - target: {fileID: 2931130176956540161, guid: 23812f125f556b04c99f197e4523c861, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2931130176956540161, guid: 23812f125f556b04c99f197e4523c861, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7134646884911343052, guid: 23812f125f556b04c99f197e4523c861, type: 3}
       propertyPath: m_Name
-      value: 6798f43247b2cda954f12438
+      value: Stephen
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7134646884911343052, guid: 23812f125f556b04c99f197e4523c861, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 624354331}
   m_SourcePrefab: {fileID: 100100000, guid: 23812f125f556b04c99f197e4523c861, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
