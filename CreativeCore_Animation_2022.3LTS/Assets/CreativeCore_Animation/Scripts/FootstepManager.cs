@@ -18,7 +18,9 @@ public class FootstepManager : MonoBehaviour
 
     private void Start()
     {
-        source = GetComponent<AudioSource>();            
+        source = GetComponent<AudioSource>();
+        surface = Surface.cave;
+        SelectStepList();
     }
 
     public void PlayStep ()
