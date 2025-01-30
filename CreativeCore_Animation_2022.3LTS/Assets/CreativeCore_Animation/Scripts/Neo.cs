@@ -16,6 +16,14 @@ public class Neo : MonoBehaviour
     public PlayableDirector director;
     private bool punched = false;
     private bool endedPunch = false;
+    public Rigidbody[] uzis;
+    private float uziThrowForce = 50f;
+    public ParticleSystem[] bloods;
+    public Animator[] guyAnims;
+    public Animator[] uziAnims;
+    public BoxCollider[] uziColls;
+    public GameObject[] muzzles;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -86,15 +94,58 @@ public class Neo : MonoBehaviour
                 transform.Rotate(Vector3.up * 40f);
             }
         }
-        if(director.time > 27)
+        /*if(director.time > 27)
         {
             director.Stop();
-        }
+        }*/
     }
 
     IEnumerator MoveInBuilding()
     {
         yield return new WaitForSeconds(3);
         animPhase = 1;
+    }
+
+    public void DoUzis()
+    {
+        StartCoroutine(DoUzis2());
+    }
+
+    IEnumerator DoUzis2()
+    {
+        anim.SetTrigger("DoUzis");
+        //anim.SetBool("Uziing", true);
+        yield return new WaitForSeconds(0.5f);
+        uziAnims[0].SetBool("Shooting", true);
+        uziAnims[1].SetBool("Shooting", true);
+        muzzles[0].SetActive(true);
+        muzzles[1].SetActive(true);
+        bloods[2].Play();
+        bloods[3].Play();
+        guyAnims[2].SetTrigger("Die1");
+        guyAnims[3].SetTrigger("Die1");
+        yield return new WaitForSeconds(1f);
+        bloods[0].Play();
+        bloods[1].Play();
+        guyAnims[0].SetTrigger("Die2");
+        guyAnims[1].SetTrigger("Die2");
+    }
+
+    public void DoDropUzis()
+    {
+        anim.SetTrigger("DoStopUzis");
+        //anim.SetBool("Uziing", false);
+        uziAnims[0].SetBool("Shooting", false);
+        uziAnims[1].SetBool("Shooting", false);
+        muzzles[0].SetActive(false);
+        muzzles[1].SetActive(false);
+        //uziColls[0].isTrigger = false;
+        //uziColls[1].isTrigger = false;
+        foreach (Rigidbody uzi in uzis)
+        {
+            uzi.isKinematic = false;
+            uzi.transform.SetParent(null);
+            uzi.AddForce(transform.forward * uziThrowForce);
+        }
     }
 }
