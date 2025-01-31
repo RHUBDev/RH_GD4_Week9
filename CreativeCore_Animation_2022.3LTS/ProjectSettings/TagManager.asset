@@ -8,6 +8,9 @@ TagManager:
   - Cave
   - Water
   - Grass
+  - TrackingObject
+  - Actors
+  - HeliPad
   layers:
   - Default
   - TransparentFX
